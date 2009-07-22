@@ -1,0 +1,6 @@
+virtual-env/*
+dist/*
+build/*
+docs/build/doctrees/*
+src/py_quickbase.egg-info/*
+*.pyc

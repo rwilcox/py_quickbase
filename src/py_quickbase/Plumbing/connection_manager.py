@@ -1,14 +1,14 @@
+from __future__ import with_statement
+
 import xml.dom
+from xmlbuilder import XMLBuilder
 
 class ConnectionManager(object):
     """ConnectionManager takes care of the connecting to QuickBase and dealing with responses"""
     
-    def __init__(self, domain, user, password, dbid, app_name, app_token = None):
+    def __init__(self, domain, app_name, app_token = None):
         super(ConnectionManager, self).__init__()
         self.domain = domain
-        self.user = user
-        self.password = password
-        self.dbid = dbid
         self.app_token = app_token
         self.app_name = app_name
     
@@ -29,11 +29,4 @@ class ConnectionManager(object):
         else
             return "https://%(domain)s.quickbase.com/"
     
-    # ======================================================
-    # Quickbase API Methods
-    # =====================================================
-    def authenticate(self):
-        """You must log in before you make a call to QuickBase"""
-        url = self._base_url(False) + "db/main"
-        
-    
+

@@ -28,6 +28,8 @@ classifiers = [
 
 install_requires = [
     'setuptools',
+    'wsgi_intercept',
+    'xmlbuilder'
     ]
 
 entry_points="""
@@ -63,7 +65,7 @@ options(
             'virtualenv',
             'github-tools',
             'Nose'
-            ]
+            ] + install_requires               # WD-rpw 07-31-2009: automatically add packages we use
         ),
     sphinx=Bunch(
         docroot='docs',
